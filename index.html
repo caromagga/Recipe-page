@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Omelette Recipe</title>
+    <style>
+        :root {
+            --primary-color: #8B5A2B;
+            --text-color: #333;
+            --background-color: #FAF3E9;
+            --card-background: #fff;
+            --border-color: #E8E0D5;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .recipe-card {
+            max-width: 700px;
+            background-color: var(--card-background);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+        
+        .recipe-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        
+        .recipe-content {
+            padding: 30px;
+        }
+        
+        .recipe-title {
+            font-size: 32px;
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .recipe-description {
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        
+        .prep-time {
+            margin-bottom: 20px;
+        }
+        
+        .prep-time-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .prep-time-list li {
+            padding: 5px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .prep-time-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 15px;
+            margin-right: 5px;
+        }
+        
+        .ingredient-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .ingredient-list li {
+            padding: 5px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .ingredient-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 15px;
+            margin-right: 5px;
+        }
+        
+        .instruction-list {
+            list-style-type: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+        
+        .instruction-list li {
+            padding: 10px 0;
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 10px;
+        }
+        
+        .instruction-list li::before {
+            content: counter(step-counter) ".";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .nutrition-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .nutrition-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .nutrition-table td {
+            padding: 12px 0;
+        }
+        
+        .nutrition-table td:last-child {
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .recipe-content {
+                padding: 20px;
+            }
+            
+            .recipe-title {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="recipe-card">
+        <img src="/api/placeholder/700/300" alt="Omelette with vegetables" class="recipe-image">
+        
+        <div class="recipe-content">
+            <h1 class="recipe-title">Simple Omelette Recipe</h1>
+            
+            <p class="recipe-description">
+                An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs 
+                cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.
+            </p>
+            
+            <div class="prep-time">
+                <h2 class="section-title">Preparation time</h2>
+                <ul class="prep-time-list">
+                    <li><strong>Total:</strong> Approximately 10 minutes</li>
+                    <li><strong>Preparation:</strong> 5 minutes</li>
+                    <li><strong>Cooking:</strong> 5 minutes</li>
+                </ul>
+            </div>
+            
+            <div class="ingredients">
+                <h2 class="section-title">Ingredients</h2>
+                <ul class="ingredient-list">
+                    <li>2-3 large eggs</li>
+                    <li>Salt, to taste</li>
+                    <li>Pepper, to taste</li>
+                    <li>1 tablespoon of butter or oil</li>
+                    <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+                </ul>
+            </div>
+            
+            <div class="instructions">
+                <h2 class="section-title">Instructions</h2>
+                <ol class="instruction-list">
+                    <li><strong>Beat the eggs:</strong> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</li>
+                    <li><strong>Heat the pan:</strong> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+                    <li><strong>Cook the omelette:</strong> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</li>
+                    <li><strong>Add fillings (optional):</strong> When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</li>
+                    <li><strong>Fold and serve:</strong> As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</li>
+                    <li><strong>Enjoy:</strong> Serve hot, with additional salt and pepper if needed.</li>
+                </ol>
+            </div>
+            
+            <div class="nutrition">
+                <h2 class="section-title">Nutrition</h2>
+                <p>The table below shows nutritional values per serving without the additional fillings.</p>
+                <table class="nutrition-table">
+                    <tr>
+                        <td>Calories</td>
+                        <td>277kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Carbs</td>
+                        <td>0g</td>
+                    </tr>
+                    <tr>
+                        <td>Protein</td>
+                        <td>20g</td>
+                    </tr>
+                    <tr>
+                        <td>Fat</td>
+                        <td>22g</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
